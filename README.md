@@ -32,8 +32,8 @@ https://utsavgohel-simform.github.io/CRUD_Operations_JS
 ```
 
 ## View of CRUD_Operations
-![image](https://user-images.githubusercontent.com/122266883/218011421-340a5007-92c0-498a-b5b5-a8fa4f544824.png)
+![image](https://user-images.githubusercontent.com/122266883/218021323-b82d79af-53e2-4cbf-adec-90cb213460c7.png)
 
 Search Product By Name
-![image](https://user-images.githubusercontent.com/122266883/218011513-8623380e-6a82-4a08-8b9e-50d5af841fe2.png)
+![image](https://user-images.githubusercontent.com/122266883/218021576-8ebc599a-bfdc-4230-8a65-08549a424121.png)
 
