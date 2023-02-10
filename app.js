@@ -31,7 +31,13 @@ const validateForm = () => {
   }
   return true;
 };
-
+const clearData = () => {
+  document.getElementById("productId").value = "";
+  document.getElementById("ProductName").value = "";
+  document.getElementById("Image").value = "";
+  document.getElementById("Price").value = "";
+  document.getElementById("Description").value = "";
+};
 const showData = () => {
   let peopleList;
   if (localStorage.getItem("peopleList") == null) {
@@ -85,11 +91,7 @@ const AddData = () => {
     });
     localStorage.setItem("peopleList", JSON.stringify(peopleList));
     showData();
-    document.getElementById("productId").value = "";
-    document.getElementById("ProductName").value = "";
-    document.getElementById("Image").value = "";
-    document.getElementById("Price").value = "";
-    document.getElementById("Description").value = "";
+    clearData();
   }
 };
 
@@ -103,11 +105,7 @@ const deleteData = (index) => {
   peopleList.splice(index, 1);
   localStorage.setItem("peopleList", JSON.stringify(peopleList));
   showData();
-  document.getElementById("productId").value = "";
-  document.getElementById("ProductName").value = "";
-  document.getElementById("Image").value = "";
-  document.getElementById("Price").value = "";
-  document.getElementById("Description").value = "";
+  clearData();
 
   document.getElementById("submit").style.display = "block";
 };
@@ -137,11 +135,7 @@ const updateData = (index) => {
         document.getElementById("Description").value;
       localStorage.setItem("peopleList", JSON.stringify(peopleList));
       showData();
-      document.getElementById("productId").value = "";
-      document.getElementById("ProductName").value = "";
-      document.getElementById("Image").value = "";
-      document.getElementById("Price").value = "";
-      document.getElementById("Description").value = "";
+      clearData();
 
       document.getElementById("submit").style.display = "block";
       document.getElementById("Update").style.display = "none";
