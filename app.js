@@ -103,6 +103,13 @@ const deleteData = (index) => {
   peopleList.splice(index, 1);
   localStorage.setItem("peopleList", JSON.stringify(peopleList));
   showData();
+  document.getElementById("productId").value = "";
+  document.getElementById("ProductName").value = "";
+  document.getElementById("Image").value = "";
+  document.getElementById("Price").value = "";
+  document.getElementById("Description").value = "";
+
+  document.getElementById("submit").style.display = "block";
 };
 
 const updateData = (index) => {
