@@ -49,13 +49,13 @@ const showData = () => {
     html += "<td>" + element.Price + "</td>";
     html += "<td>" + element.Description + "</td>";
     html +=
-      '<td><button onclick="deleteData(' +
+      '<td><button onclick="showdata(' +
       index +
-      ')" class="btn btn-danger">delete</button> <button onclick="updateData(' +
+      ')" class="btn btn-success m-2">Show</button><button onclick="updateData(' +
       index +
-      ')" class="btn btn-warning m-2">Edit</button> <button onclick="showdata(' +
+      ')" class="btn btn-warning m-2">Edit</button> <button onclick="deleteData(' +
       index +
-      ')" class="btn btn-success m-2">Show</button></td>';
+      ')" class="btn btn-danger">delete</button> </td>';
     html += "</tr>";
   });
   document.querySelector("#crudTable tbody").innerHTML = html;
@@ -155,4 +155,20 @@ const showdata = (index) => {
   document.getElementById("Image").value = peopleList[index].Image;
   document.getElementById("Price").value = peopleList[index].Price;
   document.getElementById("Description").value = peopleList[index].Description;
+};
+const searchFun = () => {
+  let filter = document.getElementById("myInput").value.toLowerCase();
+  let myTable = document.getElementById("crudTable");
+  let tr = myTable.getElementsByTagName("tr");
+  for (let index = 0; index < tr.length; index++) {
+    let td = tr[index].getElementsByTagName("td")[1];
+    if (td) {
+      let textvalue = td.textContent || td.innerHTML;
+      if (textvalue.toLowerCase().indexOf(filter) > -1) {
+        tr[index].style.display = "";
+      } else {
+        tr[index].style.display = "none";
+      }
+    }
+  }
 };
